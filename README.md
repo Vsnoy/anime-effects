@@ -1,1 +1,3 @@
-# anime-effects
+# Anime Effects
+
+Awesome Animation Effects Collection.
