@@ -15,29 +15,29 @@ body {
   align-items: center;
   width: 26px;
   height: 28px;
-}
 
-.loading div {
-  width: 4px;
-  height: 10px;
-  border-radius: 4px;
-  background-color: #ff3d5e;
-}
+  div {
+    width: 4px;
+    height: 10px;
+    border-radius: 4px;
+    background-color: #ff3d5e;
 
-.loading div:nth-of-type(1) {
-  animation: loading 1s 0.1s infinite;
-}
+    &:nth-of-type(1) {
+      animation: loading 1s 0.1s infinite;
+    }
 
-.loading div:nth-of-type(2) {
-  animation: loading 1s 0.2s infinite;
-}
+    &:nth-of-type(2) {
+      animation: loading 1s 0.2s infinite;
+    }
 
-.loading div:nth-of-type(3) {
-  animation: loading 1s 0.3s infinite;
-}
+    &:nth-of-type(3) {
+      animation: loading 1s 0.3s infinite;
+    }
 
-.loading div:nth-of-type(4) {
-  animation: loading 1s 0.4s infinite;
+    &:nth-of-type(4) {
+      animation: loading 1s 0.4s infinite;
+    }
+  }
 }
 
 @keyframes loading {
