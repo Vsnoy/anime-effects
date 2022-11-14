@@ -12,11 +12,11 @@ body {
   height: 100px;
   overflow: hidden;
 }
-.container .box {
+.container .carousel {
   display: flex;
   animation: carousel-anime 6s linear infinite;
 }
-.container .box div {
+.container .carousel div {
   width: 100px;
   height: 100px;
   flex-shrink: 0;
@@ -24,14 +24,14 @@ body {
   justify-content: center;
   align-items: center;
 }
-.container .box .item1,
-.container .box .item4 {
+.container .carousel .item1,
+.container .carousel .item4 {
   background-color: pink;
 }
-.container .box .item2 {
+.container .carousel .item2 {
   background-color: green;
 }
-.container .box .item3 {
+.container .carousel .item3 {
   background-color: yellow;
 }
 @keyframes carousel-anime {
