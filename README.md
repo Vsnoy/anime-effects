@@ -1,3 +1,6 @@
 # Anime Effects
 
-Awesome Animation Effects Collection.
+- 轮播
+- 扫光
+- 加载
+- 播放
