@@ -21,4 +21,4 @@
 ### 动画结束后维持住最后状态
 
 - animation-fill-mode 设置 forwards
-- js 监听动画结束后，设置 css，固定状态
+- js 监听动画结束后，用 js 手动设置最后状态对应的 css
