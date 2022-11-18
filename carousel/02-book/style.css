@@ -24,12 +24,12 @@ body {
   left: 0;
   z-index: 999;
   transform-origin: left bottom;
-  animation: carousel-1 1.5s infinite;
+  animation: carousel-1 1.5s 1s infinite;
 }
 .book .next-book {
   transform: translateX(5px) scale(0.9) rotate(5deg);
   transform-origin: right bottom;
-  animation: carousel-2 1.5s infinite;
+  animation: carousel-2 1.5s 1s infinite;
 }
 @keyframes carousel-1 {
   100% {
@@ -39,6 +39,7 @@ body {
 }
 @keyframes carousel-2 {
   100% {
+    opacity: 1;
     transform: none;
   }
 }

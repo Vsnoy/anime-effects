@@ -15,6 +15,7 @@ const animeLoopReset = () => {
 
   cur_book_div.style.backgroundColor = color_list[0] ?? "";
   next_book_div.style.backgroundColor = color_list[1] ?? "";
+  next_book_div.style.opacity = 0;
 };
 
 cur_book_div.addEventListener("animationiteration", animeLoopReset);
