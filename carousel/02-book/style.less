@@ -1,0 +1,52 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.book {
+  position: relative;
+  width: 90px;
+  height: 120px;
+
+  .cur-book,
+  .next-book {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+
+  .cur-book {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+
+    transform-origin: left bottom;
+    animation: carousel-1 1.5s infinite;
+  }
+
+  .next-book {
+    transform: translateX(5px) scale(0.9) rotate(5deg);
+    transform-origin: right bottom;
+    animation: carousel-2 1.5s infinite;
+  }
+
+  @keyframes carousel-1 {
+    100% {
+      opacity: 0;
+      transform: rotate(-10deg);
+    }
+  }
+
+  @keyframes carousel-2 {
+    100% {
+      transform: none;
+    }
+  }
+}
