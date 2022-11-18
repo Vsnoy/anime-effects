@@ -1,0 +1,38 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bubble {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 20px;
+  overflow: hidden;
+}
+.bubble .animation {
+  animation: popup 2s;
+}
+.bubble .cur-bubble,
+.bubble .next-bubble {
+  height: 20px;
+  line-height: 20px;
+  padding: 0 3px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 600;
+  color: hsl(194, 76%, 51%);
+  background-color: hsla(194, 76%, 51%, 0.2);
+}
+.bubble .next-bubble {
+  margin-top: 5px;
+}
+@keyframes popup {
+  100% {
+    transform: translateY(-25px);
+  }
+}
