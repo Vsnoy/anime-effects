@@ -1,0 +1,69 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow {
+  div {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-top: 3px solid black;
+    border-left: 3px solid black;
+    transform: rotate(45deg);
+
+    &:nth-of-type(1) {
+      opacity: 1;
+      animation: arrow-1 1s 0.4s infinite;
+    }
+
+    &:nth-of-type(2) {
+      top: 0;
+      opacity: 0;
+      animation: arrow-2 1s 0.2s infinite;
+    }
+
+    // 将第 2,3 个箭头初始位置重合
+    &:nth-of-type(3) {
+      top: -33px;
+      opacity: 0;
+      animation: arrow-3 1s 0.4s infinite;
+    }
+  }
+}
+
+@keyframes arrow-1 {
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes arrow-2 {
+  70% {
+    top: -33px;
+    opacity: 1;
+  }
+
+  100% {
+    top: -33px;
+    opacity: 0;
+  }
+}
+
+@keyframes arrow-3 {
+  70% {
+    top: -66px;
+    opacity: 1;
+  }
+
+  100% {
+    top: -66px;
+    opacity: 0;
+  }
+}
