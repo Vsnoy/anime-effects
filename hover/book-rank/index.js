@@ -37,11 +37,11 @@ const handleOtherHover = () => {
 
 // 展开当前书籍信息
 const handleHover = (e, ...params) => {
+  const a = e.target;
+  if (a.className === "book-item-hover") return;
+
   const [id, book, intro, author, cover] = params;
   const icon = getIcon(id);
-  const a = e.target;
-
-  if (a.className === "book-item-hover") return;
 
   hover_id_list.unshift(id);
 
@@ -72,7 +72,7 @@ BOOK_INFO_LIST.forEach((item) => {
 
   a.className = "book-item-simple";
   a.innerHTML = `
-    <img src="${icon}" class="book-rank" />
+    <img class="book-rank" src="${icon}" />
     <div class="book-name">${book}</div>
   `;
 
