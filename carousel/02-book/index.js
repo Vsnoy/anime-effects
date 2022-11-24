@@ -1,8 +1,8 @@
 // 轮播内容
 const book_list = [
-  "https://bookcover.yuewen.com/qdbimg/349573/1032880389/90",
-  "https://bookcover.yuewen.com/qdbimg/349573/1033573261/90",
-  "https://bookcover.yuewen.com/qdbimg/349573/1035226896/90",
+  "./assets/cover_01.jpg",
+  "./assets/cover_02.jpg",
+  "./assets/cover_03.jpg",
 ];
 
 const cur_book_img = document.querySelector(".cur-book");

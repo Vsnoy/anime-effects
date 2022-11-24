@@ -1,0 +1,88 @@
+html,
+body {
+  height: 100%;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.book-rank-list {
+  width: 370px;
+  height: auto;
+}
+.book-rank-list .book-item-simple {
+  display: flex;
+  height: 51px;
+}
+.book-rank-list .book-item-simple .book-rank {
+  width: 40px;
+}
+.book-rank-list .book-item-simple .book-name {
+  height: 51px;
+  line-height: 51px;
+  margin-left: 14px;
+}
+.book-rank-list .book-item-hover {
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  height: 164px;
+  padding-top: 40px;
+  padding-left: 48px;
+  background-image: url("assets/item-bg.png");
+  background-size: 368px 117px;
+  background-position: 0 38px;
+  background-repeat: no-repeat;
+}
+.book-rank-list .book-item-hover .book-rank {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  width: 40px;
+}
+.book-rank-list .book-item-hover .book-content {
+  width: 194px;
+}
+.book-rank-list .book-item-hover .book-content .book-name {
+  font-weight: 500;
+  margin-top: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.book-rank-list .book-item-hover .book-content .book-intro {
+  color: #666;
+  font-size: 12px;
+  margin-top: 12px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
+.book-rank-list .book-item-hover .book-content .book-author {
+  color: #b2b2b2;
+  font-size: 12px;
+  margin-top: 8px;
+}
+.book-rank-list .book-item-hover .book-cover {
+  width: 135px;
+  height: 173px;
+  margin-left: 6px;
+  margin-top: -40px;
+  background-image: url("assets/cover-bg.png");
+  background-size: 135px 173px;
+  background-repeat: no-repeat;
+}
+.book-rank-list .book-item-hover .book-cover img {
+  width: 96px;
+  height: 153px;
+  border-radius: 3px;
+  transform: perspective(55px) rotateY(-5deg) translateY(7px);
+}
