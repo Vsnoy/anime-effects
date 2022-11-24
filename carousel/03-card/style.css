@@ -1,0 +1,53 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  position: relative;
+  width: 200px;
+  height: 50px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #b1b5b8;
+  background-color: hsla(194, 76%, 51%, 0.2);
+}
+.card .cur-card,
+.card .next-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  color: hsl(194, 76%, 51%);
+  text-align: center;
+}
+.card .cur-card {
+  transform-origin: center -20px;
+  animation: scroll-1 3s infinite;
+}
+.card .next-card {
+  opacity: 0;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  animation: scroll-2 3s infinite;
+}
+@keyframes scroll-1 {
+  50%,
+  100% {
+    opacity: 0;
+    transform: rotateX(50deg);
+  }
+}
+@keyframes scroll-2 {
+  100% {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}
