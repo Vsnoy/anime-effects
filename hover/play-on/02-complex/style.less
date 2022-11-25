@@ -14,9 +14,9 @@ body {
   width: 200px;
   height: 280px;
   border-radius: 5px;
-  overflow: hidden;
 
-  transition: all 0.2s ease-in;
+  transition: all 0.3s;
+  overflow: hidden;
 
   &:hover {
     box-shadow: 0 10px 30px rgb(0 0 0 / 30%);
@@ -55,6 +55,8 @@ body {
       z-index: 1;
       cursor: pointer;
 
+      transition: all 0.3s;
+
       .circle {
         display: flex;
         justify-content: center;
@@ -89,7 +91,7 @@ body {
     height: 44px;
     padding: 12px;
     box-sizing: border-box;
-    background-color: linear-gradient(0deg, rgba(0, 0, 0, 0.68), transparent);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.68), transparent);
 
     span {
       display: inline-block;
