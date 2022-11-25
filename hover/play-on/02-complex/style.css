@@ -7,3 +7,148 @@ body {
   justify-content: center;
   align-items: center;
 }
+.play-on {
+  position: relative;
+  width: 200px;
+  height: 280px;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all 0.2s ease-in;
+}
+.play-on:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+.play-on:hover .cover a {
+  background-color: rgba(0, 0, 0, 0.28);
+}
+.play-on:hover .cover a .circle {
+  opacity: 0.9;
+  transform: translateX(-50%) scale(1);
+}
+.play-on:hover .content {
+  transform: translateY(-100%);
+}
+.play-on .cover {
+  width: 100%;
+  height: 100%;
+}
+.play-on .cover a,
+.play-on .cover > img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.play-on .cover a {
+  z-index: 1;
+  cursor: pointer;
+}
+.play-on .cover a .circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.6);
+  transition: all 0.2s ease-in;
+  opacity: 0;
+}
+.play-on .cover a .circle img {
+  width: 24px;
+  height: 24px;
+}
+.play-on .caption {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 44px;
+  padding: 12px;
+  box-sizing: border-box;
+  background-color: linear-gradient(0deg, rgba(0, 0, 0, 0.68), transparent);
+}
+.play-on .caption span {
+  display: inline-block;
+  max-width: 50px;
+  margin-right: 3px;
+  padding: 0 5px;
+  color: #c2c6d0;
+  font-size: 12px;
+  line-height: 20px;
+  background-color: rgba(0, 0, 0, 0.51);
+  border-radius: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.play-on .caption span:last-of-type {
+  margin-right: 0;
+}
+.play-on .content {
+  position: relative;
+  padding: 12px 15px;
+  background-color: #fff;
+  z-index: 2;
+  transition: all 0.3s;
+}
+.play-on .content .name {
+  color: #282828;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+.play-on .content .name:hover {
+  color: #ff2a14;
+}
+.play-on .content .tag {
+  margin-bottom: 8px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  max-height: 20px;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
+.play-on .content .tag span {
+  display: inline-block;
+  max-width: 50px;
+  margin-right: 3px;
+  padding: 0 5px;
+  color: rgba(0, 0, 0, 0.62);
+  font-size: 12px;
+  line-height: 20px;
+  background-color: #eaedf1;
+  border-radius: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+.play-on .content .tag span:last-of-type {
+  margin-right: 0;
+}
+.play-on .content .tag span:hover {
+  color: #fff;
+  background-color: #ff2a14;
+}
+.play-on .content .intro {
+  color: rgba(0, 0, 0, 0.62);
+  font-size: 12px;
+  line-height: 20px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
