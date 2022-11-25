@@ -1,6 +1,6 @@
 const hover_id_list = [];
 
-const div = document.querySelector(".book-rank-list");
+const div = document.querySelector(".book-rank");
 
 const getIcon = (id) => {
   switch (id) {
@@ -25,12 +25,12 @@ const handleOtherHover = () => {
     const icon = getIcon(other_hover_id);
 
     const item = BOOK_INFO_LIST.filter((item) => item.id === other_hover_id)[0];
-    const { book } = item;
+    const { name } = item;
 
     a.className = "book-item-simple";
     a.innerHTML = `
-      <img class="book-rank" src="${icon}" />
-      <div class="book-name">${book}</div>
+      <img class="book-icon" src="${icon}" />
+      <div class="book-name">${name}</div>
     `;
   });
 };
@@ -40,16 +40,16 @@ const handleHover = (e, ...params) => {
   const a = e.target;
   if (a.className === "book-item-hover") return;
 
-  const [id, book, intro, author, cover] = params;
+  const [id, author, cover, name, intro] = params;
   const icon = getIcon(id);
 
   hover_id_list.unshift(id);
 
   a.className = "book-item-hover";
   a.innerHTML = `
-    <img class="book-rank" src="${icon}" />
+    <img class="book-icon" src="${icon}" />
     <div class="book-content">
-      <div class="book-name">${book}</div>
+      <div class="book-name">${name}</div>
       <div class="book-intro">${intro}</div>
       <div class="book-author">${author}</div>
     </div>
@@ -62,7 +62,7 @@ const handleHover = (e, ...params) => {
 };
 
 BOOK_INFO_LIST.forEach((item) => {
-  const { id, author, cover, book, intro } = item;
+  const { id, author, cover, name, intro } = item;
   const icon = getIcon(id);
 
   const a = document.createElement("a");
@@ -72,12 +72,12 @@ BOOK_INFO_LIST.forEach((item) => {
 
   a.className = "book-item-simple";
   a.innerHTML = `
-    <img class="book-rank" src="${icon}" />
-    <div class="book-name">${book}</div>
+    <img class="book-icon" src="${icon}" />
+    <div class="book-name">${name}</div>
   `;
 
   a.addEventListener("mouseenter", (e) =>
-    handleHover(e, id, book, intro, author, cover)
+    handleHover(e, id, author, cover, name, intro)
   );
 
   div.appendChild(a);

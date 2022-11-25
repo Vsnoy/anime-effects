@@ -7,13 +7,13 @@ body {
   justify-content: center;
   align-items: center;
 }
-.playon {
+.play-on {
   position: relative;
   width: 200px;
   height: 280px;
   background-color: pink;
 }
-.playon .mask {
+.play-on .mask {
   position: absolute;
   top: 0;
   left: 0;
@@ -27,7 +27,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-.playon .mask .icon {
+.play-on .mask .icon {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -36,10 +36,10 @@ body {
   justify-content: center;
   align-items: center;
 }
-.playon .mask .icon:hover {
+.play-on .mask .icon:hover {
   background-color: #f50;
 }
-.playon .mask:hover {
+.play-on .mask:hover {
   opacity: 1;
   transform: scale(1);
 }

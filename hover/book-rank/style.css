@@ -11,23 +11,23 @@ body {
   justify-content: center;
   align-items: center;
 }
-.book-rank-list {
+.book-rank {
   width: 370px;
   height: auto;
 }
-.book-rank-list .book-item-simple {
+.book-rank .book-item-simple {
   display: flex;
   height: 51px;
 }
-.book-rank-list .book-item-simple .book-rank {
+.book-rank .book-item-simple .book-icon {
   width: 40px;
 }
-.book-rank-list .book-item-simple .book-name {
+.book-rank .book-item-simple .book-name {
   height: 51px;
   line-height: 51px;
   margin-left: 14px;
 }
-.book-rank-list .book-item-hover {
+.book-rank .book-item-hover {
   display: flex;
   position: relative;
   box-sizing: border-box;
@@ -39,23 +39,23 @@ body {
   background-position: 0 38px;
   background-repeat: no-repeat;
 }
-.book-rank-list .book-item-hover .book-rank {
+.book-rank .book-item-hover .book-icon {
   position: absolute;
   top: 28px;
   left: 0;
   width: 40px;
 }
-.book-rank-list .book-item-hover .book-content {
+.book-rank .book-item-hover .book-content {
   width: 194px;
 }
-.book-rank-list .book-item-hover .book-content .book-name {
+.book-rank .book-item-hover .book-content .book-name {
   font-weight: 500;
   margin-top: 12px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.book-rank-list .book-item-hover .book-content .book-intro {
+.book-rank .book-item-hover .book-content .book-intro {
   color: #666;
   font-size: 12px;
   margin-top: 12px;
@@ -66,12 +66,12 @@ body {
   text-overflow: ellipsis;
   word-break: break-all;
 }
-.book-rank-list .book-item-hover .book-content .book-author {
+.book-rank .book-item-hover .book-content .book-author {
   color: #b2b2b2;
   font-size: 12px;
   margin-top: 8px;
 }
-.book-rank-list .book-item-hover .book-cover {
+.book-rank .book-item-hover .book-cover {
   width: 135px;
   height: 173px;
   margin-left: 6px;
@@ -80,7 +80,7 @@ body {
   background-size: 135px 173px;
   background-repeat: no-repeat;
 }
-.book-rank-list .book-item-hover .book-cover img {
+.book-rank .book-item-hover .book-cover img {
   width: 96px;
   height: 153px;
   border-radius: 3px;
