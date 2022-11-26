@@ -1,0 +1,38 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cascade-card {
+  display: flex;
+  gap: 10px;
+
+  .item {
+    position: relative;
+    width: 300px;
+    height: 350px;
+    border-radius: 16px;
+    background: linear-gradient(85deg, #434343, #262626);
+
+    transition: all 0.2s;
+
+    &:not(:first-of-type) {
+      margin-left: -100px;
+      box-shadow: -30px 0 30px -20px #000;
+    }
+
+    &:hover {
+      transform: translateY(-1rem) rotate(3deg);
+
+      ~ .item {
+        transform: translateX(80px);
+      }
+    }
+  }
+}
