@@ -8,3 +8,77 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.common {
+  position: relative;
+  width: 350px;
+  height: 220px;
+  overflow: hidden;
+
+  .box {
+    display: flex;
+
+    // 初始偏移 350px，隐藏掉头部多插入的尾部图片
+    transform: translateX(-350px);
+    transition: all 1s;
+
+    img {
+      width: 350px;
+      height: 220px;
+    }
+  }
+
+  .arrow {
+    .arrow-left {
+      position: absolute;
+      top: calc(50% - 10px);
+      left: 10px;
+    }
+
+    .arrow-right {
+      position: absolute;
+      top: calc(50% - 10px);
+      right: 10px;
+    }
+
+    .circle {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      cursor: pointer;
+      background-color: #fff;
+
+      img {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+
+  .point {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 5px;
+
+    div {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #fff;
+      cursor: pointer;
+    }
+
+    .cur-point {
+      background-color: gray;
+    }
+  }
+}
