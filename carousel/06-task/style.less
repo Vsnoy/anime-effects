@@ -9,7 +9,7 @@ body {
   align-items: center;
 }
 
-.card {
+.task {
   position: relative;
   width: 200px;
   height: 50px;
@@ -17,8 +17,8 @@ body {
   box-shadow: 0 0 10px rgb(177, 181, 184);
   background-color: hsla(194, 76%, 51%, 0.2);
 
-  .cur-card,
-  .next-card {
+  .cur-task,
+  .next-task {
     position: absolute;
     top: 0;
     left: 0;
@@ -33,13 +33,13 @@ body {
     text-align: center;
   }
 
-  .cur-card {
+  .cur-task {
     // transform-origin: top;
     transform-origin: center -20px;
     animation: scroll-1 3s infinite;
   }
 
-  .next-card {
+  .next-task {
     opacity: 0;
     transform: rotateX(-90deg);
     transform-origin: bottom;
