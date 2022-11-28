@@ -5,24 +5,23 @@ const img_list = [
   "./assets/image/image_03.jpg",
 ];
 
+// 初始索引 (索引范围：-1 ~ 4。包括首尾插入的图片。)
+let cur_index = 0;
+// 第一个图片对应初始偏移量 350px（向左偏移一个图片的宽度）
+const init_translate_offset = 350;
+// 最后一个图片对应最终偏移量 350 * 3 px （向左偏移三个图片的宽度）
+const final_translate_offset = 350 * 3;
+// 图片宽度
+const img_width = 350;
+// 过渡时间（ms）
+const transition_time = 1000;
+// 自动轮播时间（ms）
+const loop_time = 3000;
 // 定时器
 let interval;
 
-// 初始索引 (索引范围：-1 ~ 4。包括首尾插入的图片。)
-let cur_index = 0;
-
-// 第一个图片对应初始偏移量 350px（向左偏移一个图片的宽度）
-const init_translate_offset = 350;
-
-// 最后一个图片对应最终偏移量 350 * 3 px （向左偏移三个图片的宽度）
-const final_translate_offset = 350 * 3;
-
-// 图片宽度
-const img_width = 350;
-
-// 过渡时间（ms）
-const transition_time = 1000;
-
+// 实例
+const common_div = document.querySelector(".common");
 const box_div = document.querySelector(".box");
 const arrow_left_div = document.querySelector(".arrow-left");
 const arrow_right_div = document.querySelector(".arrow-right");
@@ -40,8 +39,8 @@ const throttle = (fn, wait) => {
   };
 };
 
-// 切换小圆点样式
-const switchPointClass = () => {
+// 切换小圆点
+const switchPoint = () => {
   let cur_point_index;
 
   if (cur_index === -1) {
@@ -63,16 +62,22 @@ const switchPointClass = () => {
   });
 };
 
-// 切换到上一张图片
-const switchPrevImg = () => {
-  cur_index--;
+// 切换图片（上一张、下一张、小圆点）
+const switchImg = ({ type, index }) => {
+  cur_index = index;
 
+  // 切换图片
   const cur_translate_offset = init_translate_offset + cur_index * img_width;
   box_div.style.transition = `all ${transition_time / 1000}s`;
   box_div.style.transform = `translateX(-${cur_translate_offset}px)`;
 
-  // 切到尾部多插入的首部图片时，在其过渡完后，要做下调整，让其真的从头开始
-  if (cur_index === -1) {
+  // 切换小圆点
+  switchPoint();
+
+  if (type === "point") return;
+
+  // 切到头部多插入的尾部图片时，在其过渡完后，要做下调整，让其真的从尾开始
+  if (type === "prev" && cur_index === -1) {
     setTimeout(() => {
       cur_index = img_list.length - 1;
 
@@ -81,19 +86,8 @@ const switchPrevImg = () => {
     }, transition_time);
   }
 
-  switchPointClass();
-};
-
-// 切换到下一张图片
-const switchNextImg = () => {
-  cur_index++;
-
-  const cur_translate_offset = init_translate_offset + cur_index * img_width;
-  box_div.style.transition = `all ${transition_time / 1000}s`;
-  box_div.style.transform = `translateX(-${cur_translate_offset}px)`;
-
-  // 切到尾部多插入的首部图片时，在其过渡完后，要做下调整，让其真的从头开始
-  if (cur_index === img_list.length) {
+  // 切到尾部多插入的头部图片时，在其过渡完后，要做下调整，让其真的从头开始
+  if (type === "next" && cur_index === img_list.length) {
     setTimeout(() => {
       cur_index = 0;
 
@@ -101,12 +95,26 @@ const switchNextImg = () => {
       box_div.style.transform = `translateX(-${init_translate_offset}px)`;
     }, transition_time);
   }
-
-  switchPointClass();
 };
 
-// 初始化
-const init = () => {
+// 自动轮播
+const autoLoop = () => {
+  interval = setInterval(
+    () => switchImg({ type: "next", index: cur_index + 1 }),
+    loop_time
+  );
+
+  common_div.addEventListener("mouseenter", cancelLoop);
+  common_div.addEventListener("mouseleave", autoLoop);
+};
+
+// 取消自动轮播
+const cancelLoop = () => {
+  interval && clearInterval(interval);
+};
+
+// 初始化图片和小圆点
+const initImgsAndPoints = () => {
   // 头部多插一张尾部图片
   const begin_hidden_img = document.createElement("img");
   begin_hidden_img.src = img_list.at(-1);
@@ -114,12 +122,15 @@ const init = () => {
 
   // 正常插入待轮播的图片及小圆点
   img_list.forEach((item, index) => {
+    // 图片
     const img = document.createElement("img");
     img.src = item;
     box_div.appendChild(img);
 
+    // 小圆点
     const div = document.createElement("div");
     if (index === 0) div.classList.add("cur-point");
+    div.addEventListener("click", () => switchImg({ type: "point", index }));
     point_div.appendChild(div);
   });
 
@@ -127,26 +138,29 @@ const init = () => {
   const end_hidden_img = document.createElement("img");
   end_hidden_img.src = img_list[0];
   box_div.appendChild(end_hidden_img);
+};
+
+// 初始化
+const init = () => {
+  // 初始化图片和小圆点
+  initImgsAndPoints();
 
   // 自动轮播
-  interval = setInterval(switchNextImg, 3000);
+  autoLoop();
 
-  // 监听器
   arrow_left_div.addEventListener(
     "click",
-    throttle(switchPrevImg, transition_time)
+    throttle(
+      () => switchImg({ type: "prev", index: cur_index - 1 }),
+      transition_time
+    )
   );
   arrow_right_div.addEventListener(
     "click",
-    throttle(switchNextImg, transition_time)
-  );
-  box_div.addEventListener(
-    "mouseenter",
-    () => interval && clearInterval(interval)
-  );
-  box_div.addEventListener(
-    "mouseleave",
-    () => (interval = setInterval(switchNextImg, 3000))
+    throttle(
+      () => switchImg({ type: "next", index: cur_index + 1 }),
+      transition_time
+    )
   );
 };
 
