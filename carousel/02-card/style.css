@@ -7,3 +7,46 @@ body {
   justify-content: center;
   align-items: center;
 }
+.card {
+  position: relative;
+  width: 530px;
+  height: 150px;
+  overflow: hidden;
+}
+.card .box {
+  display: flex;
+  gap: 40px;
+  transform: translateX(-380px);
+  transition: all 1s;
+}
+.card .box img {
+  width: 150px;
+  height: 150px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+.card .arrow .arrow-left {
+  position: absolute;
+  top: calc(50% - 10px);
+  left: 0;
+  border-radius: 0 6px 6px 0;
+}
+.card .arrow .arrow-right {
+  position: absolute;
+  top: calc(50% - 10px);
+  right: 0;
+  border-radius: 6px 0 0 6px;
+}
+.card .arrow .circle {
+  width: 20px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.card .arrow .circle img {
+  width: 10px;
+  height: 10px;
+}

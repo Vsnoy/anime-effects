@@ -5,14 +5,16 @@ const img_list = [
   "./assets/image/image_03.jpg",
 ];
 
-// 初始索引 (索引范围：-1 ~ 4。包括首尾插入的图片。)
+// 初始索引 (索引范围：-1 ~ 3。首尾各插一张图片。)
 let cur_index = 0;
-// 第一个图片对应初始偏移量 350px（向左偏移一个图片的宽度）
-const init_translate_offset = 350;
-// 最后一个图片对应最终偏移量 350 * 3 px （向左偏移三个图片的宽度）
-const final_translate_offset = 350 * 3;
 // 图片宽度
 const img_width = 350;
+// 初始偏移量（向左偏移一个图片的宽度）
+const initial_translate_offset = img_width;
+// 头部临界偏移量（向左偏移一个图片的宽度）
+const head_translate_offset = img_width;
+// 尾部临界偏移量 （向左偏移三个图片的宽度）
+const tail_translate_offset = img_width * 3;
 // 过渡时间（ms）
 const transition_time = 1000;
 // 自动轮播时间（ms）
@@ -67,7 +69,7 @@ const switchImg = ({ type, index }) => {
   cur_index = index;
 
   // 切换图片
-  const cur_translate_offset = init_translate_offset + cur_index * img_width;
+  const cur_translate_offset = initial_translate_offset + img_width * cur_index;
   box_div.style.transition = `all ${transition_time / 1000}s`;
   box_div.style.transform = `translateX(-${cur_translate_offset}px)`;
 
@@ -82,7 +84,7 @@ const switchImg = ({ type, index }) => {
       cur_index = img_list.length - 1;
 
       box_div.style.transition = "none";
-      box_div.style.transform = `translateX(-${final_translate_offset}px)`;
+      box_div.style.transform = `translateX(-${tail_translate_offset}px)`;
     }, transition_time);
   }
 
@@ -92,7 +94,7 @@ const switchImg = ({ type, index }) => {
       cur_index = 0;
 
       box_div.style.transition = "none";
-      box_div.style.transform = `translateX(-${init_translate_offset}px)`;
+      box_div.style.transform = `translateX(-${head_translate_offset}px)`;
     }, transition_time);
   }
 };
@@ -116,9 +118,9 @@ const cancelLoop = () => {
 // 初始化图片和小圆点
 const initImgsAndPoints = () => {
   // 头部多插一张尾部图片
-  const begin_hidden_img = document.createElement("img");
-  begin_hidden_img.src = img_list.at(-1);
-  box_div.appendChild(begin_hidden_img);
+  const head_img = document.createElement("img");
+  head_img.src = img_list.at(-1);
+  box_div.appendChild(head_img);
 
   // 正常插入待轮播的图片及小圆点
   img_list.forEach((item, index) => {
@@ -135,9 +137,9 @@ const initImgsAndPoints = () => {
   });
 
   // 尾部多插一张头部图片
-  const end_hidden_img = document.createElement("img");
-  end_hidden_img.src = img_list[0];
-  box_div.appendChild(end_hidden_img);
+  const tail_img = document.createElement("img");
+  tail_img.src = img_list[0];
+  box_div.appendChild(tail_img);
 };
 
 // 初始化

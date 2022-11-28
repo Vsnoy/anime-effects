@@ -21,6 +21,7 @@ body {
 .common .box img {
   width: 350px;
   height: 220px;
+  object-fit: cover;
 }
 .common .arrow .arrow-left {
   position: absolute;

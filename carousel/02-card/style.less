@@ -8,3 +8,64 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.card {
+  position: relative;
+  width: 530px;
+  height: 150px;
+  overflow: hidden;
+
+  .box {
+    display: flex;
+
+    // 图片间距
+    gap: 40px;
+
+    // 初始偏移 380px，隐藏掉头部多插入的尾部图片
+    transform: translateX(-380px);
+    transition: all 1s;
+
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 5px;
+
+      object-fit: cover;
+    }
+  }
+
+  .arrow {
+    .arrow-left {
+      position: absolute;
+      top: calc(50% - 10px);
+      left: 0;
+
+      border-radius: 0 6px 6px 0;
+    }
+
+    .arrow-right {
+      position: absolute;
+      top: calc(50% - 10px);
+      right: 0;
+
+      border-radius: 6px 0 0 6px;
+    }
+
+    .circle {
+      width: 20px;
+      height: 40px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      cursor: pointer;
+      background-color: rgba(0, 0, 0, 0.6);
+
+      img {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+}
