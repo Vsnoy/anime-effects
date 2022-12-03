@@ -7,33 +7,33 @@ body {
   justify-content: center;
   align-items: center;
 }
-.common {
+.transform {
   position: relative;
   width: 350px;
   height: 220px;
   overflow: hidden;
 }
-.common .box {
+.transform .box {
   display: flex;
   transform: translateX(-350px);
   transition: all 1s;
 }
-.common .box img {
+.transform .box img {
   width: 350px;
   height: 220px;
   object-fit: cover;
 }
-.common .arrow .arrow-left {
+.transform .arrow .arrow-left {
   position: absolute;
   top: calc(50% - 10px);
   left: 10px;
 }
-.common .arrow .arrow-right {
+.transform .arrow .arrow-right {
   position: absolute;
   top: calc(50% - 10px);
   right: 10px;
 }
-.common .arrow .circle {
+.transform .arrow .circle {
   width: 25px;
   height: 25px;
   border-radius: 50%;
@@ -43,11 +43,11 @@ body {
   cursor: pointer;
   background-color: #fff;
 }
-.common .arrow .circle img {
+.transform .arrow .circle img {
   width: 10px;
   height: 10px;
 }
-.common .point {
+.transform .point {
   position: absolute;
   bottom: 5px;
   left: 50%;
@@ -55,13 +55,13 @@ body {
   display: flex;
   gap: 5px;
 }
-.common .point div {
+.transform .point div {
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background-color: #fff;
   cursor: pointer;
 }
-.common .point .cur-point {
+.transform .point .cur-point {
   background-color: gray;
 }

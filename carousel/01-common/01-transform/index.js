@@ -23,7 +23,7 @@ const loop_time = 3000;
 let interval;
 
 // 实例
-const common_div = document.querySelector(".common");
+const transform_div = document.querySelector(".transform");
 const box_div = document.querySelector(".box");
 const arrow_left_div = document.querySelector(".arrow-left");
 const arrow_right_div = document.querySelector(".arrow-right");
@@ -106,8 +106,8 @@ const autoLoop = () => {
     loop_time
   );
 
-  common_div.addEventListener("mouseenter", cancelLoop);
-  common_div.addEventListener("mouseleave", autoLoop);
+  transform_div.addEventListener("mouseenter", cancelLoop);
+  transform_div.addEventListener("mouseleave", autoLoop);
 };
 
 // 取消自动轮播
