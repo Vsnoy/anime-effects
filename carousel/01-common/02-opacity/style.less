@@ -10,4 +10,80 @@ body {
 }
 
 .opacity {
+  position: relative;
+  width: 350px;
+  height: 220px;
+  overflow: hidden;
+
+  .box {
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 350px;
+      height: 220px;
+      object-fit: cover;
+      transition: all 1s;
+
+      // 初始除第一张图片外，所有图片透明度设为 0
+      &:not(:nth-of-type(1)) {
+        opacity: 0;
+      }
+    }
+  }
+
+  .arrow {
+    .arrow-left {
+      position: absolute;
+      top: calc(50% - 10px);
+      left: 10px;
+    }
+
+    .arrow-right {
+      position: absolute;
+      top: calc(50% - 10px);
+      right: 10px;
+    }
+
+    .circle {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      cursor: pointer;
+      background-color: #fff;
+
+      img {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+
+  .point {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 5px;
+
+    div {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #fff;
+      cursor: pointer;
+    }
+
+    .cur-point {
+      background-color: gray;
+    }
+  }
 }

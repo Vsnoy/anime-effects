@@ -7,3 +7,63 @@ body {
   justify-content: center;
   align-items: center;
 }
+.opacity {
+  position: relative;
+  width: 350px;
+  height: 220px;
+  overflow: hidden;
+}
+.opacity .box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 350px;
+  height: 220px;
+  object-fit: cover;
+  transition: all 1s;
+}
+.opacity .box img:not(:nth-of-type(1)) {
+  opacity: 0;
+}
+.opacity .arrow .arrow-left {
+  position: absolute;
+  top: calc(50% - 10px);
+  left: 10px;
+}
+.opacity .arrow .arrow-right {
+  position: absolute;
+  top: calc(50% - 10px);
+  right: 10px;
+}
+.opacity .arrow .circle {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #fff;
+}
+.opacity .arrow .circle img {
+  width: 10px;
+  height: 10px;
+}
+.opacity .point {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+}
+.opacity .point div {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+}
+.opacity .point .cur-point {
+  background-color: gray;
+}

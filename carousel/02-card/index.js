@@ -5,7 +5,7 @@ const img_list = [
   "./assets/image/image_03.jpg",
 ];
 
-// 初始索引（索引范围：-2 ~ 5，首尾各插两张图片）
+// 当前索引（索引范围：-2 ~ 5，首尾各插两张图片）
 let cur_index = 0;
 // 图片宽度
 const img_width = 150;
