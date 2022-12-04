@@ -28,23 +28,23 @@ body {
   .cur-book {
     z-index: 999;
     transform-origin: left bottom;
-    animation: carousel-1 1.5s 1s infinite;
+    animation: swiper-1 1.5s 1s infinite;
   }
 
   .next-book {
     transform: translateX(5px) scale(0.9) rotate(5deg);
     transform-origin: right bottom;
-    animation: carousel-2 1.5s 1s infinite;
+    animation: swiper-2 1.5s 1s infinite;
   }
 
-  @keyframes carousel-1 {
+  @keyframes swiper-1 {
     100% {
       opacity: 0;
       transform: rotate(-10deg);
     }
   }
 
-  @keyframes carousel-2 {
+  @keyframes swiper-2 {
     100% {
       opacity: 1;
       transform: none;
