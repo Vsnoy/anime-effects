@@ -1,0 +1,50 @@
+.select-wrap {
+  position: relative;
+  height: 100%;
+  text-align: center;
+  overflow: hidden;
+  font-size: 20px;
+  color: #ddd;
+
+  .select-options {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    transform-style: preserve-3d;
+    margin: 0 auto;
+    display: block;
+    transform: translateZ(-150px) rotateX(0deg);
+    color: #666;
+
+    .select-option {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;
+    }
+  }
+}
+
+.date-selector {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  perspective: 2000px;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+
+  width: 600px;
+  height: 300px;
+  > div {
+    flex: 1;
+  }
+
+  .select-wrap {
+    font-size: 18px;
+  }
+}
