@@ -1,0 +1,53 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shopping-cart {
+  position: relative;
+  width: 300px;
+  height: 500px;
+  background-color: pink;
+
+  .add,
+  .cart {
+    width: 24px;
+    height: 24px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .add {
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+  }
+
+  .cart {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+@keyframes shopping-cart-x {
+  100% {
+    transform: translateX(var(--x));
+  }
+}
+
+@keyframes shopping-cart-y {
+  100% {
+    transform: translateY(var(--y));
+  }
+}
