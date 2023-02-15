@@ -1,5 +1,9 @@
 # Anime Effects
 
+## 备注
+
+可结合 http://htmlpreview.github.io/? 来预览 html
+
 ## 效果
 
 - 轮播

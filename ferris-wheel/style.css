@@ -1,0 +1,40 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ferris-wheel {
+  position: relative;
+  width: 210px;
+  height: 210px;
+  background-image: url("assets/wheel.png");
+  background-size: 210px 210px;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: rotate1 15s linear infinite;
+}
+.item {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-image: url("assets/room.png");
+  background-size: 40px 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform-origin: top center;
+  animation: rotate2 15s linear infinite;
+}
+@keyframes rotate1 {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate2 {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
