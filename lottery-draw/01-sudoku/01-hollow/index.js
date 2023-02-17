@@ -76,29 +76,6 @@ const addActiveState = () => {
   div.classList.add("item-active");
 };
 
-// 创建奖品项
-const createItems = () => {
-  lottery_info_list.forEach((item, index) => {
-    const div = document.createElement("div");
-    div.id = `item${item.id}`;
-
-    if (index === 4) {
-      div.className = "item item-bg1";
-      div.innerHTML = `<div class="name1">${item.name}</div>`;
-      div.addEventListener("click", startAnime);
-      div.style.cursor = "pointer";
-    } else {
-      div.className = "item item-bg2";
-      div.innerHTML = `
-        <img class="icon" src="${item.icon}" />
-        <div class="name2">${item.name}</div>
-      `;
-    }
-
-    hollow.appendChild(div);
-  });
-};
-
 // 动画每走一个格子的过程
 // 使用 settimeout 而不用 setinterval，方便控制转速
 const stepAnime = () => {
@@ -159,6 +136,29 @@ const startAnime = () => {
 
   // 正式开启动画
   stepAnime();
+};
+
+// 创建奖品项
+const createItems = () => {
+  lottery_info_list.forEach((item, index) => {
+    const div = document.createElement("div");
+    div.id = `item${item.id}`;
+
+    if (index === 4) {
+      div.className = "item item-bg1";
+      div.innerHTML = `<div class="name1">${item.name}</div>`;
+      div.addEventListener("click", startAnime);
+      div.style.cursor = "pointer";
+    } else {
+      div.className = "item item-bg2";
+      div.innerHTML = `
+        <img class="icon" src="${item.icon}" />
+        <div class="name2">${item.name}</div>
+      `;
+    }
+
+    hollow.appendChild(div);
+  });
 };
 
 createItems();
