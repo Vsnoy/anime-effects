@@ -1,0 +1,61 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ferris-wheel {
+  position: relative;
+  width: 210px;
+  height: 210px;
+
+  background-image: url("./assets/wheel.png");
+  background-size: 210px 210px;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  animation: rotate1 15s linear infinite;
+}
+
+.item {
+  width: 40px;
+  height: 40px;
+
+  // RN中没有伪元素，可变通在item下新建一个子元素代替
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url("./assets/room.png");
+    background-size: 40px 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+@keyframes rotate1 {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loop(@i) when (@i > 0) {
+  .loop((@i - 1));
+
+  @name: ~"rotate2-@{i}";
+
+  @keyframes @name {
+    100% {
+      @degree: unit((-360 - @i * 360/8), deg);
+      transform: rotate(@degree);
+    }
+  }
+}
+
+.loop(8);

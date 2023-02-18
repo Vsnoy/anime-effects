@@ -18,14 +18,12 @@ body {
   animation: rotate1 15s linear infinite;
 }
 .item {
-  position: absolute;
   width: 40px;
   height: 40px;
   background-image: url("assets/room.png");
   background-size: 40px 40px;
   background-position: center;
   background-repeat: no-repeat;
-  transform-origin: top center;
   animation: rotate2 15s linear infinite;
 }
 @keyframes rotate1 {
