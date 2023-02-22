@@ -1,0 +1,72 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.common {
+  width: 140px;
+  height: 50px;
+  overflow: hidden;
+  display: flex;
+}
+.common img {
+  position: relative;
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  border: 3px solid;
+  border-radius: 50%;
+  margin-right: -20px;
+}
+.common img.animation1 {
+  animation: pie1 1s linear forwards;
+}
+.common img.animation2 {
+  animation: pie2 1s linear forwards;
+}
+.common img.animation3 {
+  animation: pie3 1s linear forwards;
+}
+.common img.header4 {
+  transform: scale(0.8);
+}
+.common img.header5 {
+  opacity: 0.4;
+  transform: scale(0.4);
+}
+.common img.header5 {
+  z-index: 1;
+}
+.common img.header4 {
+  z-index: 2;
+}
+.common img.header3 {
+  z-index: 3;
+}
+.common img.header2 {
+  z-index: 4;
+}
+.common img.header1 {
+  z-index: 5;
+}
+@keyframes pie1 {
+  100% {
+    opacity: 0;
+    transform: translateX(-30px) scale(0.4);
+  }
+}
+@keyframes pie2 {
+  100% {
+    transform: translateX(-30px);
+  }
+}
+@keyframes pie3 {
+  100% {
+    opacity: 1;
+    transform: translateX(-30px) scale(0.8);
+  }
+}

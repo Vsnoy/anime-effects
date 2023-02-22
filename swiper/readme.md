@@ -10,6 +10,7 @@
 - 气泡提醒轮播动效
 - 热门书籍轮播动效
 - 任务翻转轮播动效
+- 头像层叠轮播动效
 
 ## 要点
 
@@ -24,3 +25,4 @@
 
 - [js 移除动画 class 再立马添加该 class，没有效果](https://segmentfault.com/q/1010000010651887)
 - [纯 js-普通轮播图、卡片式轮播图、堆叠式轮播图](https://juejin.cn/post/6844903939159277576)
+- [实现一个头像循环轮播控件](https://blog.csdn.net/hongli_sun/article/details/125878468)
