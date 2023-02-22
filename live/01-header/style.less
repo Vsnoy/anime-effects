@@ -1,0 +1,71 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+
+.header {
+  position: relative;
+  width: 80px;
+  height: 80px;
+
+  border-radius: 50%;
+  border: 3px solid red;
+
+  .outer_circle {
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+    border: 3px solid red;
+
+    opacity: 0;
+
+    &.outer_circle_anime {
+      animation: anime2 0.3s linear;
+    }
+  }
+
+  .inner_header {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    animation: anime1 0.6s linear infinite;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@keyframes anime1 {
+  50% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes anime2 {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+}
